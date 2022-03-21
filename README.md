@@ -48,7 +48,7 @@ Users should be able to:
 This challenge wasn't too hard for me so I tried to animate this as a flip card, in order to discover new techniques.
 I struggle to get the front and the back of the card the same height. I'm not sure if my css is as clean as possible but it seems to work!
 I paid a lot of attention to animation, and added a little feature if you click on submit before selecting a rate.
-This was a lot of fun, feel free to tel me if you have any advice!
+This was a lot of fun, feel free to tell me if you have any advice!
 
 ## Author
 
