@@ -1,0 +1,142 @@
+@import 'reset.scss';
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+
+$orange: hsl(25, 97%, 53%);
+$white: hsl(0, 0%, 100%);
+
+$grey-light: hsl(217, 12%, 63%);
+$grey: hsl(216, 12%, 54%);
+
+$blue-light: lighten(hsl(213, 19%, 18%), 4);
+$blue: hsl(213, 19%, 18%);
+$blue-dark: hsl(216, 12%, 8%);
+
+@mixin card {
+	max-width: 350px;
+	padding: 30px;
+	color: $white;
+}
+
+body {
+	background: $blue-dark url('../images/desktop-thank-you-state.jpg') no-repeat center top;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-family: 'Overpass', sans-serif;
+}
+
+.rating {
+	// opacity: 0.5;
+	position: relative;
+	margin-top: 195px;
+	background-color: $blue;
+	border-radius: 30px;
+	font-size: 15px;
+	line-height: 1.5;
+
+	&--first-state {
+		isolation: isolate;
+		backface-visibility: hidden;
+		@include card;
+	}
+	&--second-state {
+		display: flex;
+		position: absolute;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+
+		@include card;
+
+		top: 0;
+		transform: rotate3d(0, 1, 0, 180deg);
+		backface-visibility: hidden;
+	}
+
+	///////////////////////////////////////
+	//             BOTH STATE            //
+	///////////////////////////////////////
+
+	&__title {
+		font-size: 28px;
+		margin-bottom: 6px;
+		font-weight: 700;
+	}
+	&__text {
+		margin-bottom: 30px;
+		color: $grey;
+	}
+
+	///////////////////////////////////////
+	//            FIRST STATE            //
+	///////////////////////////////////////
+
+	&__star {
+		padding: 15px;
+		aspect-ratio: 1;
+		background-color: $blue-light;
+		border-radius: 50%;
+		margin-bottom: 25px;
+	}
+
+	&__numbers {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 33px;
+	}
+	&__number {
+		font-family: 'Overpass', sans-serif;
+		background-color: $blue-light;
+		width: 50px;
+		padding: 2px 0 0 1px;
+		border-radius: 50%;
+		font-size: 17px;
+		aspect-ratio: 1;
+		border: none;
+		color: $grey;
+		cursor: pointer;
+		&:hover {
+			color: $white;
+			background-color: $orange;
+		}
+		&.selected {
+			color: $white;
+			background-color: $grey;
+		}
+	}
+	&__submit {
+		font-family: 'Overpass', sans-serif;
+		background-color: $orange;
+		text-transform: uppercase;
+		width: 100%;
+		height: 45px;
+		padding-top: 5px;
+		border-radius: 50px;
+		font-size: 15px;
+		letter-spacing: 2.5px;
+		border: none;
+		color: $white;
+		cursor: pointer;
+		&:hover {
+			background-color: $white;
+			color: $orange;
+		}
+	}
+
+	///////////////////////////////////////
+	//           SECOND STATE            //
+	///////////////////////////////////////
+
+	&__illustration {
+		margin-top: 15px;
+		margin-bottom: 35px;
+	}
+	&__rate {
+		color: $orange;
+		background-color: $blue-light;
+		padding: 3px 20px 1px 20px;
+		border-radius: 20px;
+		margin-bottom: 35px;
+	}
+}
