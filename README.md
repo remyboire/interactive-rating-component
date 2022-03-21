@@ -32,7 +32,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Github](https://github.com/remyboire/interactive-rating-component)
-- Live Site URL: [Github Pages](https://remyboire.github.io/interactive-rating-component/)
+- Live Site URL: [Github Pages](https://remyboire.github.io/interactive-rating-component/public)
 
 ## My process
 
