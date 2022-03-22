@@ -35,18 +35,18 @@ body {
 	margin-top: 195px;
 	font-size: 15px;
 	line-height: 1.5;
-	transform-origin: 50% 50% -10px;
+	transform-origin: 50% 50% -50px;
 	transform-style: preserve-3d;
 	margin-inline: 15px;
-	transform: translate3D(0, 40px, 0) perspective(5000px) rotate3d(0, 1, 0, 0);
+	transform: translate3D(0, 40px, 0) perspective(2500px) rotate3d(0, 1, 0, 0);
 
 	&.visible {
 		opacity: 1;
-		transform: translate3D(0, 0, 0) perspective(5000px) rotate3d(0, 1, 0, 0);
+		transform: translate3D(0, 0, 0) perspective(2500px) rotate3d(0, 1, 0, 0);
 		transition: transform cubic-bezier(0.165, 0.84, 0.44, 1) 1s, opacity ease 1s;
 	}
 	&.turned {
-		transform: perspective(5000px) rotate3d(0, 1, 0, 180deg);
+		transform: perspective(2500px) rotate3d(0, 1, 0, 180deg);
 		transition: cubic-bezier(0.165, 0.84, 0.44, 1) 1s;
 	}
 
@@ -63,7 +63,7 @@ body {
 		align-items: center;
 		text-align: center;
 		@include card;
-		transform: perspective(5000px) rotate3d(0, 1, 0, 180deg);
+		transform: perspective(2500px) rotate3d(0, 1, 0, 180deg);
 		backface-visibility: hidden;
 		transition: 1s;
 		margin: 0;
@@ -107,28 +107,56 @@ body {
 		margin-top: 30px;
 		margin-bottom: 33px;
 	}
-	&__number {
-		font-family: 'Overpass', sans-serif;
-		background-color: $blue-light;
+
+	input[type='radio'] {
+		appearance: none;
+		margin: 0;
+		font-family: inherit;
+		color: currentColor;
 		width: 50px;
-		padding: 2px 0 0 1px;
-		border-radius: 50%;
-		font-size: 17px;
 		aspect-ratio: 1;
 		border: none;
 		color: $grey;
+		background-color: $blue-light;
+		border-radius: 50%;
 		cursor: pointer;
+		@media screen and (max-width: 400px) {
+			width: 100%;
+			margin: 1px;
+		}
+		&::before {
+			font-size: 17px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			margin-top: 50%;
+			line-height: 2px;
+		}
 		&:hover {
 			color: $white;
 			background-color: $orange;
 		}
-		&.selected {
-			color: $white;
-			background-color: $grey;
-		}
-		@media screen and (max-width: 400px) {
-			width: 11vw;
-		}
+	}
+
+	#one::before {
+		content: '1';
+	}
+	#two::before {
+		content: '2';
+	}
+	#three::before {
+		content: '3';
+	}
+	#four::before {
+		content: '4';
+	}
+	#five::before {
+		content: '5';
+	}
+	input[type='radio']:checked {
+		color: $white;
+		background-color: $grey;
 	}
 	&__submit {
 		font-family: 'Overpass', sans-serif;

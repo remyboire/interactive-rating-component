@@ -12,18 +12,13 @@ var rate = '0'
 
 buttons.forEach((element) => {
 	element.addEventListener('click', () => {
-		buttons.forEach((element) => {
-			element.classList.remove('selected')
-		})
-		element.classList.add('selected')
 		rate = element.value
-		submit.innerHTML = 'submit'
-		submit.classList.remove('disabled')
 	})
 })
 
 // When click on submit, execute the function
-submit.addEventListener('click', () => {
+submit.addEventListener('click', (e) => {
+	e.preventDefault()
 	submitted()
 })
 
@@ -42,6 +37,6 @@ function submitted() {
 }
 
 // when the page load, reveal the card
-window.onload = function () {
+function load() {
 	card.classList.add('visible')
 }
